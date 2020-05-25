@@ -102,6 +102,6 @@ class GameBoardTests: XCTestCase {
         XCTAssertEqual(xMark.stringValue, "X")
         
         let oMark = GameBoard.Mark.o
-        XCTAssertEqual(oMark.stringValue, "0")
+        XCTAssertEqual(oMark.stringValue, "O")
     }
 }
