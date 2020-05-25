@@ -28,5 +28,11 @@ class GameBoardTests: XCTestCase {
         XCTAssertNil(board[(x: 0, y: 2)])
         XCTAssertNil(board[(x: 1, y: 2)])
         XCTAssertNil(board[(x: 2, y: 2)])
+        
+        for y in 0...2 {
+            for x in 0...2 {
+                XCTAssertNil(board[(x, y)], "⚠️ The entry at (\(x), \(y) ) was  \(board[(x, y)]!) instead of nil.")
+            }
+        }
     }
 }
