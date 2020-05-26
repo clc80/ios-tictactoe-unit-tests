@@ -42,5 +42,34 @@ func game(board: GameBoard, isWonBy player: GameBoard.Mark) -> Bool {
         }
     }
     
+    // check for the first diagonal
+    let leftToRight: [Coordinate] = [(0, 0), (1, 1), (2, 2)]
+    var numberOfMarks = 0
+
+    for coordinate in leftToRight {
+        if board[coordinate] == player {
+            numberOfMarks += 1
+        }
+    }
+
+    if numberOfMarks == 3 {
+        return true
+    }
+    
+    // reset for the other diagonal
+    let RightToLeft: [Coordinate] = [(0, 2), (1, 1), (2, 0)]
+    
+    numberOfMarks = 0
+
+    for coordinate in RightToLeft {
+        if board[coordinate] == player {
+            numberOfMarks += 1
+        }
+    }
+
+    if numberOfMarks == 3 {
+        return true
+    }
+    
     return false
 }
